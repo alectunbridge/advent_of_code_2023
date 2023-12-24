@@ -45,4 +45,38 @@ public class DayTwo {
         }
         return sumOfValidGameNumbers;
     }
+
+    public long part2() {
+        int sumOfGameCubes = 0;
+        for (int gameNumber = 1; gameNumber <= input.size(); gameNumber++) {
+            String line = input.get(gameNumber - 1);
+            Matcher redMatcher = RED_PATTERN.matcher(line);
+            Matcher greenMatcher = GREEN_PATTERN.matcher(line);
+            Matcher blueMatcher = BLUE_PATTERN.matcher(line);
+            int maxRed = 0;
+            int maxGreen = 0;
+            int maxBlue= 0;
+
+            while (redMatcher.find()) {
+                int noOfReds = Integer.parseInt(redMatcher.group(1));
+                if (noOfReds > maxRed) {
+                    maxRed = noOfReds;
+                }
+            }
+            while (greenMatcher.find()) {
+                int noOfGreens = Integer.parseInt(greenMatcher.group(1));
+                if (noOfGreens > maxGreen) {
+                    maxGreen = noOfGreens;
+                }
+            }
+            while (blueMatcher.find()) {
+                int noOfBlue = Integer.parseInt(blueMatcher.group(1));
+                if (noOfBlue > maxBlue) {
+                    maxBlue = noOfBlue;
+                }
+            }
+            sumOfGameCubes += maxRed * maxGreen * maxBlue;
+        }
+        return sumOfGameCubes;
+    }
 }
