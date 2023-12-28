@@ -23,6 +23,6 @@ public class DayFourTest {
 
     @Test
     void part1() {
-        assertThat(new DayFour(Utils.readInputLinesFromFile("day04.txt")).part1()).isEqualTo(0);
+        assertThat(new DayFour(Utils.readInputLinesFromFile("day04.txt")).part1()).isEqualTo(21158);
     }
 }
