@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class DayFourTest {
     @Test
-    void part1Example() {
+    void part1AndPart2Example() {
         DayFour dayFour = new DayFour(Arrays.asList(
                 "Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53",
                 "Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19",
@@ -19,10 +19,13 @@ public class DayFourTest {
         );
 
         assertThat(dayFour.part1()).isEqualTo(13);
+        assertThat(dayFour.part2()).isEqualTo(30);
     }
 
     @Test
-    void part1() {
-        assertThat(new DayFour(Utils.readInputLinesFromFile("day04.txt")).part1()).isEqualTo(21158);
+    void part1AndPart2() {
+        DayFour dayFour = new DayFour(Utils.readInputLinesFromFile("day04.txt"));
+        assertThat(dayFour.part1()).isEqualTo(21158);
+        assertThat(dayFour.part2()).isEqualTo(6050769);
     }
 }
